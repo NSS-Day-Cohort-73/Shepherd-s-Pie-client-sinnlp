@@ -1,0 +1,152 @@
+{
+  "pizzaSizes": [
+    {
+      "id": 1,
+      "size": "Small (10in.)",
+      "price": 10.0
+    },
+    {
+      "id": 2,
+      "size": "Medium (14in.)",
+      "price": 12.0
+    },
+    {
+      "id": 3,
+      "size": "Large (18in.)",
+      "price": 15.0
+    }
+  ],
+  "cheeseOptions": [
+    {
+      "id": 1,
+      "type": "Buffalo Mozzarella"
+    },
+    {
+      "id": 2,
+      "type": "Four Cheese"
+    },
+    {
+      "id": 3,
+      "type": "Vegan"
+    },
+    {
+      "id": 4,
+      "type": "None (cheeseless)"
+    }
+  ],
+
+  "sauceOptions": [
+    {
+      "id": 1,
+      "type": "Marinara"
+    },
+    {
+      "id": 2,
+      "type": "Arrabbiata"
+    },
+    {
+      "id": 3,
+      "type": "Garlic White"
+    },
+    {
+      "id": 4,
+      "type": "None (sauceless pizza)"
+    }
+  ],
+  "toppings": [
+    {
+      "id": 1,
+      "type": "sausage",
+      "price": 0.5
+    },
+    {
+      "id": 2,
+      "type": "pepperoni",
+      "price": 0.5
+    },
+    {
+      "id": 3,
+      "type": "mushroom",
+      "price": 0.5
+    },
+    {
+      "id": 4,
+      "type": "onion",
+      "price": 0.5
+    },
+    {
+      "id": 5,
+      "type": "green pepper",
+      "price": 0.5
+    },
+    {
+      "id": 6,
+      "type": "black olive",
+      "price": 0.5
+    },
+    {
+      "id": 7,
+      "type": "basil",
+      "price": 0.5
+    },
+    {
+      "id": 8,
+      "type": "extra cheese",
+      "price": 0.5
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "James Almos",
+      "address": "55 West St.",
+      "email": "JAlmos@email.gov",
+      "phoneNumber": 8285552866
+    },
+    {
+      "id": 2,
+      "name": "Chad Krueger",
+      "address": "128 Elm Ave.",
+      "email": "Krugeshow@gmail.com",
+      "phoneNumber": 8285558285
+    },
+    {
+      "id": 3,
+      "name": "Jessica Shephard",
+      "address": "1708 Alm crc.",
+      "email": "JessShep@email.com",
+      "phoneNumber": 5555555555
+    },
+    {
+      "id": 4,
+      "name": "Emily Smith",
+      "address": "2 Smith St.",
+      "email": "Smith@smith.edu",
+      "phoneNumber": 2345678901
+    },
+    {
+      "id": 5,
+      "name": "Mia Parker",
+      "address": "2408 West Ave.",
+      "email": "parkerM@yahoo.com",
+      "phoneNumber": 77782874321
+    },
+    {
+      "id": 6,
+      "name": "Jeremiah Smith",
+      "address": "15000 Pennsylvania Ave.",
+      "email": "JeremiahSmith@penn.co",
+      "phoneNumber": 4451713245
+    },
+    {
+      "id": 7,
+      "name": "Ann Perkins",
+      "address": "55 East Pawnee Blvd.",
+      "email": "PerkinsAnn@gov.gov",
+      "phoneNumber": 1234567890
+    }
+  ],
+  "orders": [],
+  "orderPizzas": [],
+  "orderToppings": []
+}
