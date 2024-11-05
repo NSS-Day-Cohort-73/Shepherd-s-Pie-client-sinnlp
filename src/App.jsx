@@ -1,7 +1,21 @@
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import "./styles/App.css";
+import { Login } from "./components/auth/Login";
+import { ApplicationViews } from "./views/ApplicationViews";
+import { Authorized } from "./views/Authorized";
 
-function App() {
-  return <div className="App">Shepherd's Pies</div>;
-}
-
-export default App;
+export const App = () => {
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route
+        path="*"
+        element={
+          <Authorized>
+            <ApplicationViews />
+          </Authorized>
+        }
+      ></Route>
+    </Routes>
+  );
+};
