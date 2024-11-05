@@ -23,6 +23,7 @@ Table employees {
     address varchar
     email varchar
     phoneNumber int
+    isAdmin boolean
 }
 Table orders {
     id int [pk]

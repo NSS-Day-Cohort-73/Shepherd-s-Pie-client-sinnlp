@@ -101,49 +101,56 @@
       "name": "James Almos",
       "address": "55 West St.",
       "email": "JAlmos@email.gov",
-      "phoneNumber": 8285552866
+      "phoneNumber": 8285552866,
+      "isAdmin": true
     },
     {
       "id": 2,
       "name": "Chad Krueger",
       "address": "128 Elm Ave.",
       "email": "Krugeshow@gmail.com",
-      "phoneNumber": 8285558285
+      "phoneNumber": 8285558285,
+      "isAdmin": false
     },
     {
       "id": 3,
       "name": "Jessica Shephard",
       "address": "1708 Alm crc.",
       "email": "JessShep@email.com",
-      "phoneNumber": 5555555555
+      "phoneNumber": 5555555555,
+      "isAdmin": false
     },
     {
       "id": 4,
       "name": "Emily Smith",
       "address": "2 Smith St.",
       "email": "Smith@smith.edu",
-      "phoneNumber": 2345678901
+      "phoneNumber": 2345678901,
+      "isAdmin": true
     },
     {
       "id": 5,
       "name": "Mia Parker",
       "address": "2408 West Ave.",
       "email": "parkerM@yahoo.com",
-      "phoneNumber": 77782874321
+      "phoneNumber": 77782874321,
+      "isAdmin": false
     },
     {
       "id": 6,
       "name": "Jeremiah Smith",
       "address": "15000 Pennsylvania Ave.",
       "email": "JeremiahSmith@penn.co",
-      "phoneNumber": 4451713245
+      "phoneNumber": 4451713245,
+      "isAdmin": false
     },
     {
       "id": 7,
       "name": "Ann Perkins",
       "address": "55 East Pawnee Blvd.",
       "email": "PerkinsAnn@gov.gov",
-      "phoneNumber": 1234567890
+      "phoneNumber": 1234567890,
+      "isAdmin": true
     }
   ],
   "orders": [],
