@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
+import { CreateOrder } from "../components/orders/Createorders";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -21,7 +22,12 @@ export const ApplicationViews = () => {
             <Outlet />
           </>
         }
-      ></Route>
+      >
+        <Route
+          path="createorder"
+          element={<CreateOrder currentUser={currentUser} />}
+        />
+      </Route>
     </Routes>
   );
 };
