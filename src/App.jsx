@@ -1,8 +1,8 @@
-import { ApplicationViews } from "./views/ApplicationViews";
 import { Route, Routes } from "react-router-dom";
-import { Login } from "./components/auth/Login";
-import { Authorized } from "./views/Authorized";
 import "./styles/App.css";
+import { Login } from "./components/auth/Login";
+import { ApplicationViews } from "./views/ApplicationViews";
+import { Authorized } from "./views/Authorized";
 
 export const App = () => {
   return (
