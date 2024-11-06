@@ -19,7 +19,6 @@ export const ApplicationViews = () => {
         path="/"
         element={
           <>
-
             <NavBar />
             <Outlet />
           </>
