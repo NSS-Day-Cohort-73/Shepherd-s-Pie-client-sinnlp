@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import { CreateOrder } from "../components/orders/Createorders";
+import { addPizza } from "../components/pizzas/addPizza";
+//eventually we'll need an orders.jsx import for the order details view
 import { NavBar } from "../components/nav/navBar";
 
 export const ApplicationViews = () => {
@@ -29,6 +31,9 @@ export const ApplicationViews = () => {
           element={<CreateOrder currentUser={currentUser} />}
         />
       </Route>
+      {/* <Route path="/orders" element={<Orders />} /> */}
+      {/* not useful yet */}
+      <Route path="/add-pizza" element={<addPizza />} />
     </Routes>
   );
 };

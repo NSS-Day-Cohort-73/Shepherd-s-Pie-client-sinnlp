@@ -1,42 +1,46 @@
 import { NavLink } from "react-router-dom";
 import "../../styles/nav.css";
 import React from "react";
+
 export const NavBar = () => {
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <NavLink
-          to="/create-order"
-          className="navbar-btn"
-          activeClassName="active"
-        >
-          Create Order
-        </NavLink>
-        <NavLink
-          to="/all-orders"
-          className="navbar-btn"
-          activeClassName="active"
-        >
-          All Orders
-        </NavLink>
-        <NavLink
-          to="/all-employees"
-          className="navbar-btn"
-          activeClassName="active"
-        >
-          All Employees
-        </NavLink>
-        <NavLink
-          to="/sales-report"
-          className="navbar-btn"
-          activeClassName="active"
-        >
-          Sales Report
-        </NavLink>
-        <NavLink to="/logout" className="navbar-btn" activeClassName="active">
-          Logout
-        </NavLink>
-      </div>
+    <nav>
+      <NavLink
+        to=".create-order"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Create Order
+      </NavLink>
+      <NavLink
+        to="/all-orders"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        All Orders
+      </NavLink>
+      <NavLink
+        to="/employees"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        All Employees
+      </NavLink>
+      <NavLink
+        to="/sales-report"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Sales Report
+      </NavLink>
+      <NavLink
+        to="/logout"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Logout
+      </NavLink>
+      {/* <NavLink
+        to="/add-pizza"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Add New Pizza
+      </NavLink> */}
     </nav>
   );
 };
