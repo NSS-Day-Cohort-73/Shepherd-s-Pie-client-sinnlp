@@ -3,17 +3,17 @@
     {
       "id": 1,
       "size": "Small (10in.)",
-      "price": 10.0
+      "price": 10
     },
     {
       "id": 2,
       "size": "Medium (14in.)",
-      "price": 12.0
+      "price": 12
     },
     {
       "id": 3,
       "size": "Large (18in.)",
-      "price": 15.0
+      "price": 15
     }
   ],
   "cheeseOptions": [
@@ -34,7 +34,6 @@
       "type": "None (cheeseless)"
     }
   ],
-
   "sauceOptions": [
     {
       "id": 1,
@@ -153,7 +152,68 @@
       "isAdmin": true
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "isDelivery": false,
+      "dateTime": "2024-11-05T20:55:32.418Z",
+      "tableNumber": "4",
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 1
+    },
+    {
+      "isDelivery": true,
+      "dateTime": "2024-11-05T20:56:38.655Z",
+      "tableNumber": null,
+      "tip": false,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 2
+    },
+    {
+      "isDelivery": false,
+      "dateTime": "2024-11-05T21:05:10.729Z",
+      "tableNumber": null,
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 3
+    },
+    {
+      "isDelivery": false,
+      "dateTime": "2024-11-05T21:05:16.086Z",
+      "tableNumber": "1",
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 4
+    },
+    {
+      "isDelivery": true,
+      "dateTime": "2024-11-05T21:06:30.670Z",
+      "tableNumber": null,
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 5
+    },
+    {
+      "isDelivery": true,
+      "dateTime": "2024-11-05T21:11:05.164Z",
+      "tableNumber": null,
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 6
+    }
+  ],
   "orderPizzas": [],
   "orderToppings": []
 }
