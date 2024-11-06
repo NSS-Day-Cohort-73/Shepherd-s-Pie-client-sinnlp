@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import { CreateOrder } from "../components/orders/Createorders";
 import { NavBar } from "../components/nav/navBar";
+import { OrderDetails } from "../components/orders/OrderDetails";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -27,6 +28,10 @@ export const ApplicationViews = () => {
         <Route
           path="create-order"
           element={<CreateOrder currentUser={currentUser} />}
+        />
+        <Route
+          path="orders/:orderId"
+          element={<OrderDetails currentUser={currentUser} />}
         />
       </Route>
     </Routes>

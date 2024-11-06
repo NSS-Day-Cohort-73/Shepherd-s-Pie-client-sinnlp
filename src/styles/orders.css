@@ -5,3 +5,42 @@ fieldset {
   font-size: 1.1rem;
   padding: 1rem;
 }
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.order-utilities {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.pizza-choices,
+.order-utilities {
+  margin-top: 4rem;
+}
+
+.pizza-choices,
+.order-utilities {
+  border: 1px solid chocolate;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.pizza-choice {
+  margin-bottom: 1rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.pizza-choices .btn {
+  margin: 0 0.5rem;
+}
+
+.order-utilities .btn {
+  margin-bottom: 2rem;
+}
