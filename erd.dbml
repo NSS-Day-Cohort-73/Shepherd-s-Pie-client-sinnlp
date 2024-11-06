@@ -38,9 +38,9 @@ Table orders {
 Table orderPizzas {
     id int [pk]
     orderId int [ref: > orders.id]
-    sizeId int [ref: > pizzaSizes.id]
-    cheeseId int [ref: > cheeseOptions.id]
-    sauceId int [ref: > sauceOptions.id]
+    pizzaSizeId int [ref: > pizzaSizes.id]
+    cheeseOptionId int [ref: > cheeseOptions.id]
+    sauceOptionId int [ref: > sauceOptions.id]
 }
 Table orderToppings {
     id int [pk]
