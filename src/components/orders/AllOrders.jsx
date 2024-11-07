@@ -5,7 +5,11 @@ import "../../styles/AllOrders.css"
 export const AllOrders = () => {
   const [orders, setOrders] = useState([])
   const [filteredOrders, setFilteredOrders] = useState([])
-  const [selectedDate, setSelectedDate] = useState("")
+
+  const today = new Date().toISOString().slice(0, 10)
+
+  const [selectedDate, setSelectedDate] = useState(today)
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -16,10 +20,6 @@ export const AllOrders = () => {
     }
     fetchOrders()
   }, [])
-
-  const orderDetailsArrow = (orderId) => {
-    navigate(`/orders/${orderId}`)
-  }
 
   useEffect(() => {
     if (selectedDate) {
@@ -33,13 +33,17 @@ export const AllOrders = () => {
     }
   }, [selectedDate, orders])
 
+  const orderDetailsArrow = (orderId) => {
+    navigate(`/orders/${orderId}`)
+  }
+
   return (
     <div className="all-orders-container">
       <h2 className="all-orders-heading">All Orders</h2>
 
       <fieldset className="date-filter">
         <label htmlFor="order-date" className="form-label">
-          Filter by Day{" "}
+          Filter by Day:
         </label>
         <input
           type="date"
@@ -56,7 +60,7 @@ export const AllOrders = () => {
             <div className="order-details">
               <div>Order #{order.id}</div>
               <div>Assigned Employee ID: {order.employeeId}</div>
-              <div>Total Cost: ${order.cost}</div>
+              <div>Total Cost: ${order.cost || "N/A"}</div>
             </div>
             <span
               className="view-arrow"
