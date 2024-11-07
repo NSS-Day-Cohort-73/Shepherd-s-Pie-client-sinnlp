@@ -5,6 +5,7 @@ import { addPizza } from "../components/pizzas/addPizza";
 //eventually we'll need an orders.jsx import for the order details view
 import { NavBar } from "../components/nav/navBar";
 import { OrderDetails } from "../components/orders/OrderDetails";
+import { SalesReport } from "../components/salesreport/SalesReport";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -31,6 +32,7 @@ export const ApplicationViews = () => {
           path="create-order"
           element={<CreateOrder currentUser={currentUser} />}
         />
+        <Route path="sales-report" element={<SalesReport />} />
         <Route
           path="orders/:orderId"
           element={<OrderDetails currentUser={currentUser} />}
