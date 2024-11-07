@@ -1,23 +1,24 @@
-import { useEffect, useState } from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
-import { CreateOrder } from "../components/orders/Createorders";
-import { AddPizza } from "../components/pizzas/addPizza";
+import { useEffect, useState } from "react"
+import { Outlet, Route, Routes } from "react-router-dom"
+import { CreateOrder } from "../components/orders/Createorders"
+import { AddPizza } from "../components/pizzas/addPizza"
 //eventually we'll need an orders.jsx import for the order details view
-import { NavBar } from "../components/nav/navBar";
-import { OrderDetails } from "../components/orders/OrderDetails";
-import { AllOrders } from "../components/orders/AllOrders";
-import { AllEmployees } from "../components/employees/AllEmployees";
-import { UpdateEmployees } from "../components/employees/UpdateEmployees";
+import { NavBar } from "../components/nav/navBar"
+import { OrderDetails } from "../components/orders/OrderDetails"
+import { AllOrders } from "../components/orders/AllOrders"
+import { AllEmployees } from "../components/employees/AllEmployees"
+import { UpdateEmployees } from "../components/employees/UpdateEmployees"
+import { UpdateOrder } from "../components/orders/UpdateOrder"
 
 export const ApplicationViews = () => {
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState({})
 
   useEffect(() => {
-    const localPieUser = localStorage.getItem("shepherds_pie_user");
-    const pieUserObject = JSON.parse(localPieUser);
+    const localPieUser = localStorage.getItem("shepherds_pie_user")
+    const pieUserObject = JSON.parse(localPieUser)
 
-    setCurrentUser(pieUserObject);
-  }, []);
+    setCurrentUser(pieUserObject)
+  }, [])
 
   return (
     <Routes>
@@ -43,8 +44,6 @@ export const ApplicationViews = () => {
           element={<OrderDetails currentUser={currentUser} />}
         />
         <Route
-          path="orders/:orderId/update"
-          element={<UpdateOrder currentUser={currentUser} />}
           path="add-pizza"
           element={<AddPizza currentUser={currentUser} />}
         />
@@ -56,7 +55,11 @@ export const ApplicationViews = () => {
           path="update-employee/:employeeId"
           element={<UpdateEmployees currentUser={currentUser} />}
         />
+        <Route
+          path="orders/:orderId/update"
+          element={<UpdateOrder currentUser={currentUser} />}
+        />
       </Route>
     </Routes>
   )
-};
+}
