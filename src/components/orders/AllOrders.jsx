@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { GrabOrders } from "../../services/orderServices"
 import "../../styles/AllOrders.css"
 
 export const AllOrders = () => {
@@ -7,15 +8,13 @@ export const AllOrders = () => {
   const [filteredOrders, setFilteredOrders] = useState([])
 
   const today = new Date().toISOString().slice(0, 10)
-
   const [selectedDate, setSelectedDate] = useState(today)
 
   const navigate = useNavigate()
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const response = await fetch("http://localhost:8088/orders")
-      const data = await response.json()
+      const data = await GrabOrders()
       setOrders(data)
     }
     fetchOrders()

@@ -45,3 +45,9 @@ export const CancelOrder = (orderId) => {
     method: "DELETE",
   }).then((res) => res.json());
 };
+
+export const GrabOrders = async () => {
+  const response = await fetch("http://localhost:8088/orders")
+  const data = await response.json()
+  return data
+}
