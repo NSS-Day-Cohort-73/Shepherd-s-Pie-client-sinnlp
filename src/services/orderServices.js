@@ -51,3 +51,13 @@ export const GrabOrders = async () => {
   const data = await response.json()
   return data
 }
+
+export const updateOrder = (orderId, updatedPizza) => {
+  return fetch(`http://localhost:8088/orderPizzas/${orderId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedPizza),
+  }).then((res) => res.json())
+}
