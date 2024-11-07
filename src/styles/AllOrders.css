@@ -1,0 +1,69 @@
+/* Container for the main orders view */
+.all-orders-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header style */
+.all-orders-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* List styling */
+.orders-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual order items */
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Order details on the left */
+.order-details {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Order number and assigned employee ID */
+.order-details p {
+  margin: 5px 0;
+}
+
+/* Styling for total cost */
+.order-details .total-cost {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* Styling for right arrow icon */
+.order-item .view-arrow {
+  font-size: 18px;
+  color: #e74c3c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-item .view-arrow:hover {
+  color: #c0392b;
+}

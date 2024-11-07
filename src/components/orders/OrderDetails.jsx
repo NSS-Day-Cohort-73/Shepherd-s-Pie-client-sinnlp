@@ -59,6 +59,7 @@ export const OrderDetails = ({ currentUser }) => {
         <>
           <label>Assign Deliverer</label>
           <select
+            className="form-select"
             value={orderToEdit.delivererId}
             onChange={(e) => {
               const copy = { ...orderToEdit };
@@ -142,7 +143,7 @@ export const OrderDetails = ({ currentUser }) => {
       <section className="utilities-container">
         <h3>Total Order Cost: ${handleTotalCost().toFixed(2)}</h3>
         <div className="order-utilities">
-          <Link to={"/add-pizz"}>
+          <Link to={"/add-pizza"}>
             <button className="btn btn-primary">Add Pizza</button>
           </Link>
           <button

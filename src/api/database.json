@@ -212,8 +212,46 @@
       "employeeId": 7,
       "cost": null,
       "id": 6
+    },
+    {
+      "isDelivery": true,
+      "dateTime": "2024-11-07T17:16:39.419Z",
+      "tableNumber": null,
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 7
+    },
+    {
+      "isDelivery": false,
+      "dateTime": "2024-11-07T17:17:09.579Z",
+      "tableNumber": "7",
+      "tip": false,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 8
+    },
+    {
+      "isDelivery": true,
+      "dateTime": "2024-11-07T17:17:38.538Z",
+      "tableNumber": null,
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 9
     }
   ],
-  "orderPizzas": [],
+  "orderPizzas": [
+    {
+      "id": 1,
+      "orderId": 7,
+      "cheeseOptionId": 2,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 2
+    }
+  ],
   "orderToppings": []
 }

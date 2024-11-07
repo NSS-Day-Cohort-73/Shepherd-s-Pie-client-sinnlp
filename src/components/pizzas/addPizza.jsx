@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/addPizza.css";
 
-export const addPizza = () => {
+export const AddPizza = () => {
   const [getSize, setSize] = useState("");
   const [getCheese, setCheese] = useState("");
   const [getToppings, setToppings] = useState("");
