@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import { CreateOrder } from "../components/orders/Createorders";
-import { addPizza } from "../components/pizzas/addPizza";
+import { AddPizza } from "../components/pizzas/addPizza";
 //eventually we'll need an orders.jsx import for the order details view
 import { NavBar } from "../components/nav/navBar";
 import { OrderDetails } from "../components/orders/OrderDetails";
 import { AllOrders } from "../components/orders/AllOrders";
-import { UpdateOrder } from "../components/orders/UpdateOrder";
+import { AllEmployees } from "../components/employees/AllEmployees";
+import { UpdateEmployees } from "../components/employees/UpdateEmployees";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -44,11 +45,18 @@ export const ApplicationViews = () => {
         <Route
           path="orders/:orderId/update"
           element={<UpdateOrder currentUser={currentUser} />}
+          path="add-pizza"
+          element={<AddPizza currentUser={currentUser} />}
+        />
+        <Route
+          path="all-employees"
+          element={<AllEmployees currentUser={currentUser} />}
+        />
+        <Route
+          path="update-employee/:employeeId"
+          element={<UpdateEmployees currentUser={currentUser} />}
         />
       </Route>
-      {/* <Route path="/orders" element={<Orders />} /> */}
-      {/* not useful yet */}
-      <Route path="/add-pizza" element={<addPizza />} />
     </Routes>
   )
 };

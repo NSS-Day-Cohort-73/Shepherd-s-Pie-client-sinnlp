@@ -1,0 +1,25 @@
+.all-employees-container {
+  padding: 2em;
+}
+
+.employee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.employee-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.employee-card button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
