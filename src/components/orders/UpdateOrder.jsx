@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react"
 import { GetOrderById, GetToppingsByPizzaId, updateOrder,
 } from "../../services/orderServices"
 import "../../styles/UpdateOrder.css"
+import { useNavigate } from "react-router-dom"
 
 export const UpdateOrder = ({ orderId }) => {
   const [pizzaSize, setPizzaSize] = useState(null)
   const [cheeseOption, setCheeseOption] = useState(null)
   const [sauceOption, setSauceOption] = useState(null)
   const [toppings, setToppings] = useState([]) 
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchOrderData = async () => {
@@ -50,6 +53,8 @@ export const UpdateOrder = ({ orderId }) => {
 
     await updateOrder(orderId, updatedPizza)
     alert("Order updated successfully!")
+
+    navigate(`/orders/${orderId}`)
   }
 
   return (
