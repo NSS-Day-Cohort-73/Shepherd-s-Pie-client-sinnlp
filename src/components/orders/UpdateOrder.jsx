@@ -190,8 +190,11 @@ export const UpdateOrder = ({ orderId }) => {
           </label>
         ))}
       </fieldset>
-
-      <button onClick={handleUpdateOrder}>Update Pizza</button>
+      <div className="button-container">
+        <button className="update-pizza-button" onClick={handleUpdateOrder}>
+          Update Pizza
+        </button>
+      </div>
     </div>
   )
 }
