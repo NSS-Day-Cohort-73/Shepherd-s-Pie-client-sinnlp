@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import {
   AddDeliverer,
   CancelOrder,
@@ -16,6 +16,7 @@ export const OrderDetails = ({ currentUser }) => {
   const [orderToEdit, setOrderToEdit] = useState({});
 
   const { orderId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     GetOrderById(orderId).then((o) => {
@@ -143,9 +144,15 @@ export const OrderDetails = ({ currentUser }) => {
       <section className="utilities-container">
         <h3>Total Order Cost: ${handleTotalCost().toFixed(2)}</h3>
         <div className="order-utilities">
-          <Link to={"/add-pizza"}>
+          <button
+            className="btn btn-primary"
+            onClick={() => navigate("/add-pizza")}
+          >
+            Add Pizza
+          </button>
+          {/* <Link to={"/add-pizza"}>
             <button className="btn btn-primary">Add Pizza</button>
-          </Link>
+          </Link> */}
           <button
             className="btn btn-secondary"
             onClick={() => {

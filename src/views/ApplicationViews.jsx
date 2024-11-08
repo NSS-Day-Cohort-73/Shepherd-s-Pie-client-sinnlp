@@ -7,6 +7,8 @@ import { NavBar } from "../components/nav/navBar";
 import { OrderDetails } from "../components/orders/OrderDetails";
 import { SalesReport } from "../components/salesreport/SalesReport";
 import { AllOrders } from "../components/orders/AllOrders";
+import { AllEmployees } from "../components/employees/AllEmployees";
+import { UpdateEmployees } from "../components/employees/UpdateEmployees";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -42,6 +44,18 @@ export const ApplicationViews = () => {
         <Route
           path="orders/:orderId"
           element={<OrderDetails currentUser={currentUser} />}
+        />
+        <Route
+          path="add-pizza"
+          element={<AddPizza currentUser={currentUser} />}
+        />
+        <Route
+          path="all-employees"
+          element={<AllEmployees currentUser={currentUser} />}
+        />
+        <Route
+          path="update-employee/:employeeId"
+          element={<UpdateEmployees currentUser={currentUser} />}
         />
       </Route>
       {/* <Route path="/orders" element={<Orders />} /> */}

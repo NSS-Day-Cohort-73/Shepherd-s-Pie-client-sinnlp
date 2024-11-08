@@ -18,7 +18,7 @@ export const NavBar = () => {
         All Orders
       </NavLink>
       <NavLink
-        to="/employees"
+        to="/all-employees"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
         All Employees
