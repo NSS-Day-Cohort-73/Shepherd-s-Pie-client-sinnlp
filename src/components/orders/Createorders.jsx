@@ -27,7 +27,7 @@ export const CreateOrder = ({ currentUser }) => {
     });
   };
   return (
-    <form className="container">
+    <form className="container new-order-container">
       <h3>New Order:</h3>
       <fieldset>
         <label className="form-label">Is this for delivery?</label>
