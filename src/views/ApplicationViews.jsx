@@ -9,6 +9,7 @@ import { SalesReport } from "../components/salesreport/SalesReport";
 import { AllOrders } from "../components/orders/AllOrders";
 import { AllEmployees } from "../components/employees/AllEmployees";
 import { UpdateEmployees } from "../components/employees/UpdateEmployees";
+import { UpdateOrder } from "../components/orders/UpdateOrder"
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({})
