@@ -145,7 +145,7 @@ export const OrderDetails = ({ currentUser }) => {
         <div className="order-utilities">
           <button
             className="btn btn-primary"
-            onClick={() => navigate("/add-pizza")}
+            onClick={() => navigate(`/orders/${orderId}/add-pizza`)}
           >
             Add Pizza
           </button>
