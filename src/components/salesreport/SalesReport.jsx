@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export const SalesReport = () => {
   const [allOrders, setAllOrders] = useState([]);
-  const [selectedMonth, setSelectedMonth] = useState("");
+  const [selectedMonth, setSelectedMonth] = useState(null);
   const [mostPopularCheese, setMostPopularCheese] = useState("");
   const [mostPopularSauce, setMostPopularSauce] = useState("");
   const [mostPopularSize, setMostPopularSize] = useState("");

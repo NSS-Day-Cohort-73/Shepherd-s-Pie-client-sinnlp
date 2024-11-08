@@ -98,7 +98,7 @@
     {
       "id": 1,
       "name": "James Almos",
-      "address": "55 West St.",
+      "address": "55 Court West St.",
       "email": "JAlmos@email.gov",
       "phoneNumber": 8285552866,
       "isAdmin": true
