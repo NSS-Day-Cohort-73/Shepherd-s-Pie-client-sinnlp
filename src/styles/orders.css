@@ -11,6 +11,19 @@ fieldset {
   justify-content: space-around;
 }
 
+.new-order-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-order-container h3 {
+  margin: 3rem 0 2rem 15rem;
+}
+.new-order-container .btn {
+  width: 10%;
+  margin: 1rem auto 4rem auto;
+}
+
 .order-utilities {
   display: flex;
   flex-direction: column;

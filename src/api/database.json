@@ -98,7 +98,7 @@
     {
       "id": 1,
       "name": "James Almos",
-      "address": "55 West St.",
+      "address": "55 Court West St.",
       "email": "JAlmos@email.gov",
       "phoneNumber": 8285552866,
       "isAdmin": true
@@ -214,66 +214,44 @@
       "id": 6
     },
     {
-      "id": "f7fc",
-      "isDelivery": false,
-      "dateTime": "2024-11-07T17:21:07.436Z",
-      "tableNumber": "2",
-      "tip": true,
-      "delivererId": null,
-      "employeeId": 7,
-      "cost": null
-    },
-    {
-      "id": "f284",
-      "isDelivery": false,
-      "dateTime": "2024-11-07T17:23:28.306Z",
-      "tableNumber": "15",
-      "tip": true,
-      "delivererId": null,
-      "employeeId": 7,
-      "cost": null
-    },
-    {
-      "id": "3dd4",
-      "isDelivery": false,
-      "dateTime": "2024-11-07T17:49:37.401Z",
-      "tableNumber": "14",
-      "tip": false,
-      "delivererId": null,
-      "employeeId": 7,
-      "cost": null
-    },
-    {
-      "id": "94d3",
-      "isDelivery": false,
-      "dateTime": "2024-11-07T18:10:55.433Z",
-      "tableNumber": "3",
-      "tip": false,
-      "delivererId": null,
-      "employeeId": 7,
-      "cost": null
-    },
-    {
-      "id": "c26c",
-      "isDelivery": false,
-      "dateTime": "2024-11-07T18:19:20.641Z",
-      "tableNumber": "4",
-      "tip": true,
-      "delivererId": null,
-      "employeeId": 7,
-      "cost": null
-    },
-    {
-      "id": "2e25",
-      "isDelivery": false,
-      "dateTime": "2024-11-07T21:21:19.368Z",
+      "isDelivery": true,
+      "dateTime": "2024-11-07T17:16:39.419Z",
       "tableNumber": null,
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 7
+    },
+    {
+      "isDelivery": false,
+      "dateTime": "2024-11-07T17:17:09.579Z",
+      "tableNumber": "7",
       "tip": false,
       "delivererId": null,
       "employeeId": 7,
-      "cost": null
+      "cost": null,
+      "id": 8
+    },
+    {
+      "isDelivery": true,
+      "dateTime": "2024-11-07T17:17:38.538Z",
+      "tableNumber": null,
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": null,
+      "id": 9
     }
   ],
-  "orderPizzas": [],
+  "orderPizzas": [
+    {
+      "id": 1,
+      "orderId": 7,
+      "cheeseOptionId": 2,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 2
+    }
+  ],
   "orderToppings": []
 }

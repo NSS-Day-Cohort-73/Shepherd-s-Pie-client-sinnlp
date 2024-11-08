@@ -6,7 +6,7 @@ export const NavBar = () => {
   return (
     <nav>
       <NavLink
-        to="/create-order"
+        to="create-order"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
         Create Order

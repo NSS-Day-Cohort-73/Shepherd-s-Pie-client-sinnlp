@@ -1,0 +1,67 @@
+.most-popular-container {
+  margin: 5rem auto 0 auto;
+  width: 80%;
+}
+
+.most-popular-container h3 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.popular-choices-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.popular-option,
+.monthly-orders {
+  border: 1px solid brown;
+  padding: 1rem;
+  width: 30%;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.1rem gray;
+}
+
+.report-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.report-header .form-select {
+  width: 30%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.reports-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.monthly-orders {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.reports-container h3 {
+  text-align: center;
+  margin: 2rem 0 4rem 0;
+  text-decoration: underline;
+}
+
+.orders-crd {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.monthly-orders:hover {
+  box-shadow: 0 0 0.3rem gray;
+}
