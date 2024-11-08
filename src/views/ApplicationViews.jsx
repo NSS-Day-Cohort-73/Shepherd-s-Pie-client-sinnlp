@@ -46,7 +46,7 @@ export const ApplicationViews = () => {
           element={<OrderDetails currentUser={currentUser} />}
         />
         <Route
-          path="add-pizza"
+          path="orders/:orderId/add-pizza"
           element={<AddPizza currentUser={currentUser} />}
         />
         <Route

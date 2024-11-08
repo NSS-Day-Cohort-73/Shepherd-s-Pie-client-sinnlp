@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CreateNewOrder } from "../../services/orderServices";
+import { CreateNewOrder, CreateOrderPizza } from "../../services/orderServices";
 import { useNavigate } from "react-router-dom";
 import "../../styles/orders.css";
 
@@ -11,7 +11,7 @@ export const CreateOrder = ({ currentUser }) => {
   });
 
   const navigate = useNavigate();
-  const handleCreateOrder = (e) => {
+  const handleCreateOrder = async (e) => {
     e.preventDefault();
     const newOrderObj = {
       isDelivery: newOrder.isDelivery,
@@ -22,9 +22,16 @@ export const CreateOrder = ({ currentUser }) => {
       employeeId: currentUser.id,
       cost: null,
     };
-    CreateNewOrder(newOrderObj).then((response) => {
-      navigate(`/orders/${response.id}`);
-    });
+
+    const response = await CreateNewOrder(newOrderObj);
+    /*const newPizzaObj = {
+      orderId: response.id,
+      cheeseOptionId: 0,
+      sauceOptionId: 0,
+      pizzaSizeId: 0,
+    };
+    await CreateOrderPizza(newPizzaObj);*/
+    navigate(`/orders/${response.id}`);
   };
   return (
     <form className="container new-order-container">
