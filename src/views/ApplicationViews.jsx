@@ -3,12 +3,12 @@ import { Outlet, Route, Routes } from "react-router-dom"
 import { CreateOrder } from "../components/orders/Createorders"
 import { AddPizza } from "../components/pizzas/addPizza"
 //eventually we'll need an orders.jsx import for the order details view
-import { NavBar } from "../components/nav/navBar"
-import { OrderDetails } from "../components/orders/OrderDetails"
-import { AllOrders } from "../components/orders/AllOrders"
-import { AllEmployees } from "../components/employees/AllEmployees"
-import { UpdateEmployees } from "../components/employees/UpdateEmployees"
-import { UpdateOrder } from "../components/orders/UpdateOrder"
+import { NavBar } from "../components/nav/navBar";
+import { OrderDetails } from "../components/orders/OrderDetails";
+import { SalesReport } from "../components/salesreport/SalesReport";
+import { AllOrders } from "../components/orders/AllOrders";
+import { AllEmployees } from "../components/employees/AllEmployees";
+import { UpdateEmployees } from "../components/employees/UpdateEmployees";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({})
@@ -35,6 +35,8 @@ export const ApplicationViews = () => {
           path="create-order"
           element={<CreateOrder currentUser={currentUser} />}
         />
+        <Route path="sales-report" element={<SalesReport />} />
+        <Route path="/add-pizza" element={<AddPizza />} />
         <Route
           path="all-orders"
           element={<AllOrders currentUser={currentUser} />}
@@ -60,6 +62,8 @@ export const ApplicationViews = () => {
           element={<UpdateOrder currentUser={currentUser} />}
         />
       </Route>
+      {/* <Route path="/orders" element={<Orders />} /> */}
+      {/* not useful yet */}
     </Routes>
   )
 }

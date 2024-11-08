@@ -1,4 +1,8 @@
-export const GetOrders = () => {};
+export const GetOrders = () => {
+  return fetch(
+    `http://localhost:8088/orderPizzas?&_expand=order&_expand=cheeseOption&_expand=pizzaSize&_expand=sauceOption`
+  ).then((res) => res.json());
+};
 
 export const CreateNewOrder = (orderObj) => {
   return fetch(`http://localhost:8088/orders`, {

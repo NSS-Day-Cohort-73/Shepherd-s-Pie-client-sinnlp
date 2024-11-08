@@ -60,6 +60,7 @@ export const OrderDetails = ({ currentUser }) => {
         <>
           <label>Assign Deliverer</label>
           <select
+            className="form-select"
             value={orderToEdit.delivererId}
             onChange={(e) => {
               const copy = { ...orderToEdit };
