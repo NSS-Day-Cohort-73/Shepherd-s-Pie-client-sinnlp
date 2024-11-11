@@ -160,7 +160,7 @@
       "tip": true,
       "delivererId": null,
       "employeeId": 7,
-      "cost": null,
+      "cost": 16,
       "id": 1
     },
     {
@@ -170,7 +170,7 @@
       "tip": false,
       "delivererId": null,
       "employeeId": 7,
-      "cost": null,
+      "cost": 37,
       "id": 2
     },
     {
@@ -180,7 +180,7 @@
       "tip": true,
       "delivererId": null,
       "employeeId": 7,
-      "cost": null,
+      "cost": 41,
       "id": 3
     },
     {
@@ -190,7 +190,7 @@
       "tip": true,
       "delivererId": null,
       "employeeId": 7,
-      "cost": null,
+      "cost": 10.5,
       "id": 4
     },
     {
@@ -436,744 +436,862 @@
       "cheeseOptionId": 2,
       "sauceOptionId": 2,
       "pizzaSizeId": 3,
-      "id": 12
+      "id": 9
     },
     {
       "orderId": 8,
       "cheeseOptionId": 1,
       "sauceOptionId": 1,
       "pizzaSizeId": 1,
-      "id": 13
+      "id": 10
     },
     {
       "orderId": 9,
       "cheeseOptionId": 1,
       "sauceOptionId": 1,
       "pizzaSizeId": 1,
-      "id": 14
+      "id": 11
     },
     {
       "orderId": 9,
       "cheeseOptionId": 1,
       "sauceOptionId": 1,
       "pizzaSizeId": 2,
-      "id": 15
+      "id": 12
     },
     {
       "orderId": 12,
       "cheeseOptionId": 2,
       "sauceOptionId": 2,
       "pizzaSizeId": 1,
+      "id": 13
+    },
+    {
+      "orderId": 12,
+      "cheeseOptionId": 1,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 1,
+      "id": 14
+    },
+    {
+      "orderId": 12,
+      "cheeseOptionId": 1,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 1,
+      "id": 15
+    },
+    {
+      "orderId": 12,
+      "cheeseOptionId": 1,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 1,
       "id": 16
-    },
-    {
-      "orderId": 12,
-      "cheeseOptionId": 1,
-      "sauceOptionId": 1,
-      "pizzaSizeId": 1,
-      "id": 17
-    },
-    {
-      "orderId": 12,
-      "cheeseOptionId": 1,
-      "sauceOptionId": 1,
-      "pizzaSizeId": 1,
-      "id": 18
-    },
-    {
-      "orderId": 12,
-      "cheeseOptionId": 1,
-      "sauceOptionId": 1,
-      "pizzaSizeId": 1,
-      "id": 19
     },
     {
       "orderId": 13,
       "cheeseOptionId": 1,
       "sauceOptionId": 2,
       "pizzaSizeId": 1,
-      "id": 20
+      "id": 17
     },
     {
       "orderId": 14,
       "cheeseOptionId": 1,
       "sauceOptionId": 1,
       "pizzaSizeId": 1,
-      "id": 21
+      "id": 18
     },
     {
       "orderId": 15,
       "cheeseOptionId": 2,
       "sauceOptionId": 2,
       "pizzaSizeId": 2,
-      "id": 22
+      "id": 19
     },
     {
       "orderId": 16,
       "cheeseOptionId": 4,
       "sauceOptionId": 3,
       "pizzaSizeId": 3,
-      "id": 23
+      "id": 20
     },
     {
       "orderId": 16,
       "cheeseOptionId": 2,
       "sauceOptionId": 2,
       "pizzaSizeId": 3,
-      "id": 24
+      "id": 21
     },
     {
       "orderId": 17,
       "cheeseOptionId": 2,
       "sauceOptionId": 2,
       "pizzaSizeId": 3,
-      "id": 25
+      "id": 22
     },
     {
       "orderId": 18,
       "cheeseOptionId": 4,
       "sauceOptionId": 4,
       "pizzaSizeId": 2,
-      "id": 26
+      "id": 23
     },
     {
       "orderId": 18,
       "cheeseOptionId": 2,
       "sauceOptionId": 1,
       "pizzaSizeId": 3,
-      "id": 27
+      "id": 24
     },
     {
       "orderId": 8,
       "cheeseOptionId": 2,
       "sauceOptionId": 3,
       "pizzaSizeId": 1,
-      "id": 28
+      "id": 25
     },
     {
       "orderId": 8,
       "cheeseOptionId": 3,
       "sauceOptionId": 3,
       "pizzaSizeId": 3,
-      "id": 29
+      "id": 26
     },
     {
       "orderId": 8,
       "cheeseOptionId": 2,
       "sauceOptionId": 2,
       "pizzaSizeId": 2,
-      "id": 30
+      "id": 27
     },
     {
       "orderId": 19,
       "cheeseOptionId": 1,
       "sauceOptionId": 3,
       "pizzaSizeId": 1,
-      "id": 31
+      "id": 28
     },
     {
       "orderId": 20,
       "cheeseOptionId": 2,
       "sauceOptionId": 2,
       "pizzaSizeId": 2,
-      "id": 32
+      "id": 29
     },
     {
       "orderId": 20,
       "cheeseOptionId": 3,
       "sauceOptionId": 3,
       "pizzaSizeId": 3,
-      "id": 33
+      "id": 30
     },
     {
       "orderId": 21,
       "cheeseOptionId": 2,
       "sauceOptionId": 1,
       "pizzaSizeId": 1,
-      "id": 34
+      "id": 31
     },
     {
       "orderId": 22,
       "cheeseOptionId": 1,
       "sauceOptionId": 1,
       "pizzaSizeId": 3,
-      "id": 35
+      "id": 32
     },
     {
       "orderId": 22,
       "cheeseOptionId": 1,
       "sauceOptionId": 1,
       "pizzaSizeId": 2,
+      "id": 33
+    },
+    {
+      "orderId": 1,
+      "cheeseOptionId": 3,
+      "sauceOptionId": 2,
+      "pizzaSizeId": 3,
+      "id": 34
+    },
+    {
+      "orderId": 2,
+      "cheeseOptionId": 1,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 2,
+      "id": 35
+    },
+    {
+      "orderId": 2,
+      "cheeseOptionId": 2,
+      "sauceOptionId": 2,
+      "pizzaSizeId": 2,
       "id": 36
+    },
+    {
+      "orderId": 3,
+      "cheeseOptionId": 1,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 2,
+      "id": 37
+    },
+    {
+      "orderId": 3,
+      "cheeseOptionId": 1,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 3,
+      "id": 38
+    },
+    {
+      "orderId": 3,
+      "cheeseOptionId": 3,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 1,
+      "id": 39
+    },
+    {
+      "orderId": 4,
+      "cheeseOptionId": 1,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 1,
+      "id": 40
     }
   ],
   "orderToppings": [
     {
-      "orderPizzasId": 2,
+      "orderPizzaId": 2,
       "toppingId": 2,
       "id": 1
     },
     {
-      "orderPizzasId": 2,
+      "orderPizzaId": 2,
       "toppingId": 3,
       "id": 2
     },
     {
-      "orderPizzasId": 2,
+      "orderPizzaId": 2,
       "toppingId": 4,
       "id": 3
     },
     {
-      "orderPizzasId": 3,
+      "orderPizzaId": 3,
       "toppingId": 5,
       "id": 4
     },
     {
-      "orderPizzasId": 3,
+      "orderPizzaId": 3,
       "toppingId": 7,
       "id": 5
     },
     {
-      "orderPizzasId": 3,
+      "orderPizzaId": 3,
       "toppingId": 6,
       "id": 6
     },
     {
-      "orderPizzasId": 3,
+      "orderPizzaId": 3,
       "toppingId": 8,
       "id": 7
     },
     {
-      "orderPizzasId": 4,
+      "orderPizzaId": 4,
       "toppingId": 1,
       "id": 8
     },
     {
-      "orderPizzasId": 4,
+      "orderPizzaId": 4,
       "toppingId": 6,
       "id": 9
     },
     {
-      "orderPizzasId": 4,
+      "orderPizzaId": 4,
       "toppingId": 2,
       "id": 10
     },
     {
-      "orderPizzasId": 5,
+      "orderPizzaId": 5,
       "toppingId": 4,
       "id": 11
     },
     {
-      "orderPizzasId": 5,
+      "orderPizzaId": 5,
       "toppingId": 1,
       "id": 12
     },
     {
-      "orderPizzasId": 5,
+      "orderPizzaId": 5,
       "toppingId": 2,
       "id": 13
     },
     {
-      "orderPizzasId": 5,
+      "orderPizzaId": 5,
       "toppingId": 8,
       "id": 14
     },
     {
-      "orderPizzasId": 5,
+      "orderPizzaId": 5,
       "toppingId": 2,
       "id": 15
     },
     {
-      "orderPizzasId": 6,
+      "orderPizzaId": 6,
       "toppingId": 3,
       "id": 16
     },
     {
-      "orderPizzasId": 6,
+      "orderPizzaId": 6,
       "toppingId": 1,
       "id": 17
     },
     {
-      "orderPizzasId": 6,
+      "orderPizzaId": 6,
       "toppingId": 1,
       "id": 18
     },
     {
-      "orderPizzasId": 7,
+      "orderPizzaId": 7,
       "toppingId": 2,
       "id": 19
     },
     {
-      "orderPizzasId": 7,
+      "orderPizzaId": 7,
       "toppingId": 3,
       "id": 20
     },
     {
-      "orderPizzasId": 8,
+      "orderPizzaId": 8,
       "toppingId": 2,
       "id": 21
     },
     {
-      "orderPizzasId": 8,
+      "orderPizzaId": 8,
       "toppingId": 7,
       "id": 22
     },
     {
-      "orderPizzasId": 8,
+      "orderPizzaId": 8,
       "toppingId": 6,
       "id": 23
     },
     {
-      "orderPizzasId": 9,
+      "orderPizzaId": 9,
       "toppingId": 2,
       "id": 24
     },
     {
-      "orderPizzasId": 9,
+      "orderPizzaId": 9,
       "toppingId": 3,
       "id": 25
     },
     {
-      "orderPizzasId": 10,
+      "orderPizzaId": 10,
       "toppingId": 2,
       "id": 26
     },
     {
-      "orderPizzasId": 10,
+      "orderPizzaId": 10,
       "toppingId": 3,
       "id": 27
     },
     {
-      "orderPizzasId": 11,
+      "orderPizzaId": 11,
       "toppingId": 2,
       "id": 28
     },
     {
-      "orderPizzasId": 11,
+      "orderPizzaId": 11,
       "toppingId": 7,
       "id": 29
     },
     {
-      "orderPizzasId": 11,
+      "orderPizzaId": 11,
       "toppingId": 8,
       "id": 30
     },
     {
-      "orderPizzasId": 12,
+      "orderPizzaId": 12,
       "toppingId": 2,
       "id": 31
     },
     {
-      "orderPizzasId": 12,
+      "orderPizzaId": 12,
       "toppingId": 1,
       "id": 32
     },
     {
-      "orderPizzasId": 13,
+      "orderPizzaId": 13,
       "toppingId": 1,
       "id": 33
     },
     {
-      "orderPizzasId": 13,
+      "orderPizzaId": 13,
       "toppingId": 6,
       "id": 34
     },
     {
-      "orderPizzasId": 13,
+      "orderPizzaId": 13,
       "toppingId": 7,
       "id": 35
     },
     {
-      "orderPizzasId": 14,
+      "orderPizzaId": 14,
       "toppingId": 1,
       "id": 36
     },
     {
-      "orderPizzasId": 14,
+      "orderPizzaId": 14,
       "toppingId": 2,
       "id": 37
     },
     {
-      "orderPizzasId": 15,
+      "orderPizzaId": 15,
       "toppingId": 1,
       "id": 38
     },
     {
-      "orderPizzasId": 15,
+      "orderPizzaId": 15,
       "toppingId": 2,
       "id": 39
     },
     {
-      "orderPizzasId": 16,
+      "orderPizzaId": 16,
       "toppingId": 1,
       "id": 40
     },
     {
-      "orderPizzasId": 16,
+      "orderPizzaId": 16,
       "toppingId": 2,
       "id": 41
     },
     {
-      "orderPizzasId": 17,
+      "orderPizzaId": 17,
       "toppingId": 1,
       "id": 42
     },
     {
-      "orderPizzasId": 17,
+      "orderPizzaId": 17,
       "toppingId": 2,
       "id": 43
     },
     {
-      "orderPizzasId": 18,
+      "orderPizzaId": 18,
       "toppingId": 1,
       "id": 44
     },
     {
-      "orderPizzasId": 18,
+      "orderPizzaId": 18,
       "toppingId": 2,
       "id": 45
     },
     {
-      "orderPizzasId": 19,
+      "orderPizzaId": 19,
       "toppingId": 1,
       "id": 46
     },
     {
-      "orderPizzasId": 19,
+      "orderPizzaId": 19,
       "toppingId": 2,
       "id": 47
     },
     {
-      "orderPizzasId": 20,
+      "orderPizzaId": 20,
       "toppingId": 4,
       "id": 48
     },
     {
-      "orderPizzasId": 20,
+      "orderPizzaId": 20,
       "toppingId": 3,
       "id": 49
     },
     {
-      "orderPizzasId": 21,
+      "orderPizzaId": 21,
       "toppingId": 1,
       "id": 50
     },
     {
-      "orderPizzasId": 21,
+      "orderPizzaId": 21,
       "toppingId": 2,
       "id": 51
     },
     {
-      "orderPizzasId": 24,
+      "orderPizzaId": 24,
       "toppingId": 1,
       "id": 52
     },
     {
-      "orderPizzasId": 24,
+      "orderPizzaId": 24,
       "toppingId": 2,
       "id": 53
     },
+
     {
-      "toppingId": 1,
-      "id": 54
-    },
-    {
-      "toppingId": 2,
-      "id": 55
-    },
-    {
-      "toppingId": 1,
-      "id": 56
-    },
-    {
-      "toppingId": 2,
-      "id": 57
-    },
-    {
-      "toppingId": 1,
-      "id": 58
-    },
-    {
-      "toppingId": 2,
-      "id": 59
-    },
-    {
-      "toppingId": 1,
-      "id": 60
-    },
-    {
-      "toppingId": 6,
-      "id": 61
-    },
-    {
-      "orderPizzasId": 20,
+      "orderPizzaId": 20,
       "toppingId": 1,
       "id": 62
     },
     {
-      "orderPizzasId": 20,
+      "orderPizzaId": 20,
       "toppingId": 6,
       "id": 63
     },
     {
-      "orderPizzasId": 20,
+      "orderPizzaId": 20,
       "toppingId": 6,
       "id": 64
     },
     {
-      "orderPizzasId": 21,
+      "orderPizzaId": 21,
       "toppingId": 2,
       "id": 65
     },
     {
-      "orderPizzasId": 21,
+      "orderPizzaId": 21,
       "toppingId": 7,
       "id": 66
     },
     {
-      "orderPizzasId": 21,
+      "orderPizzaId": 21,
       "toppingId": 7,
       "id": 67
     },
     {
-      "orderPizzasId": 22,
+      "orderPizzaId": 22,
       "toppingId": 4,
       "id": 68
     },
     {
-      "orderPizzasId": 22,
+      "orderPizzaId": 22,
       "toppingId": 5,
       "id": 69
     },
     {
-      "orderPizzasId": 20,
+      "orderPizzaId": 20,
       "toppingId": 1,
       "id": 70
     },
     {
-      "orderPizzasId": 20,
+      "orderPizzaId": 20,
       "toppingId": 2,
       "id": 71
     },
     {
-      "orderPizzasId": 21,
+      "orderPizzaId": 21,
       "toppingId": 1,
       "id": 72
     },
     {
-      "orderPizzasId": 21,
+      "orderPizzaId": 21,
       "toppingId": 6,
       "id": 73
     },
     {
-      "orderPizzasId": 22,
+      "orderPizzaId": 22,
       "toppingId": 7,
       "id": 74
     },
     {
-      "orderPizzasId": 22,
+      "orderPizzaId": 22,
       "toppingId": 8,
       "id": 75
     },
     {
-      "orderPizzasId": 23,
+      "orderPizzaId": 23,
       "toppingId": 3,
       "id": 76
     },
     {
-      "orderPizzasId": 23,
+      "orderPizzaId": 23,
       "toppingId": 4,
       "id": 77
     },
     {
-      "orderPizzasId": 24,
+      "orderPizzaId": 24,
       "toppingId": 7,
       "id": 78
     },
     {
-      "orderPizzasId": 24,
+      "orderPizzaId": 24,
       "toppingId": 5,
       "id": 79
     },
     {
-      "orderPizzasId": 24,
+      "orderPizzaId": 24,
       "toppingId": 8,
       "id": 80
     },
     {
-      "orderPizzasId": 25,
+      "orderPizzaId": 25,
       "toppingId": 2,
       "id": 81
     },
     {
-      "orderPizzasId": 25,
+      "orderPizzaId": 25,
       "toppingId": 7,
       "id": 82
     },
     {
-      "orderPizzasId": 25,
+      "orderPizzaId": 25,
       "toppingId": 8,
       "id": 83
     },
     {
-      "orderPizzasId": 25,
+      "orderPizzaId": 25,
       "toppingId": 3,
       "id": 84
     },
     {
-      "orderPizzasId": 25,
+      "orderPizzaId": 25,
       "toppingId": 2,
       "id": 85
     },
     {
-      "orderPizzasId": 25,
+      "orderPizzaId": 25,
       "toppingId": 7,
       "id": 86
     },
     {
-      "orderPizzasId": 26,
+      "orderPizzaId": 26,
       "toppingId": 5,
       "id": 87
     },
     {
-      "orderPizzasId": 26,
+      "orderPizzaId": 26,
       "toppingId": 8,
       "id": 88
     },
     {
-      "orderPizzasId": 27,
+      "orderPizzaId": 27,
       "toppingId": 2,
       "id": 89
     },
     {
-      "orderPizzasId": 27,
+      "orderPizzaId": 27,
       "toppingId": 1,
       "id": 90
     },
     {
-      "orderPizzasId": 28,
+      "orderPizzaId": 28,
       "toppingId": 3,
       "id": 91
     },
     {
-      "orderPizzasId": 28,
+      "orderPizzaId": 28,
       "toppingId": 2,
       "id": 92
     },
     {
-      "orderPizzasId": 29,
+      "orderPizzaId": 29,
       "toppingId": 3,
       "id": 93
     },
     {
-      "orderPizzasId": 29,
+      "orderPizzaId": 29,
       "toppingId": 7,
       "id": 94
     },
     {
-      "orderPizzasId": 29,
+      "orderPizzaId": 29,
       "toppingId": 6,
       "id": 95
     },
     {
-      "orderPizzasId": 30,
+      "orderPizzaId": 30,
       "toppingId": 2,
       "id": 96
     },
     {
-      "orderPizzasId": 30,
+      "orderPizzaId": 30,
       "toppingId": 7,
       "id": 97
     },
     {
-      "orderPizzasId": 30,
+      "orderPizzaId": 30,
       "toppingId": 7,
       "id": 98
     },
     {
-      "orderPizzasId": 31,
+      "orderPizzaId": 31,
       "toppingId": 5,
       "id": 99
     },
     {
-      "orderPizzasId": 31,
+      "orderPizzaId": 31,
       "toppingId": 4,
       "id": 100
     },
     {
-      "orderPizzasId": 31,
+      "orderPizzaId": 31,
       "toppingId": 3,
       "id": 101
     },
     {
-      "orderPizzasId": 32,
+      "orderPizzaId": 32,
       "toppingId": 2,
       "id": 102
     },
     {
-      "orderPizzasId": 32,
+      "orderPizzaId": 32,
       "toppingId": 7,
       "id": 103
     },
     {
-      "orderPizzasId": 33,
+      "orderPizzaId": 33,
       "toppingId": 3,
       "id": 104
     },
     {
-      "orderPizzasId": 33,
+      "orderPizzaId": 33,
       "toppingId": 8,
       "id": 105
     },
     {
-      "orderPizzasId": 33,
+      "orderPizzaId": 33,
       "toppingId": 7,
       "id": 106
     },
     {
-      "orderPizzasId": 34,
+      "orderPizzaId": 34,
       "toppingId": 1,
       "id": 107
     },
     {
-      "orderPizzasId": 34,
+      "orderPizzaId": 34,
       "toppingId": 2,
       "id": 108
     },
     {
-      "orderPizzasId": 35,
+      "orderPizzaId": 35,
       "toppingId": 1,
       "id": 109
     },
     {
-      "orderPizzasId": 35,
+      "orderPizzaId": 35,
       "toppingId": 6,
       "id": 110
     },
     {
-      "orderPizzasId": 35,
+      "orderPizzaId": 35,
       "toppingId": 2,
       "id": 111
     },
     {
-      "orderPizzasId": 36,
+      "orderPizzaId": 36,
       "toppingId": 4,
       "id": 112
     },
     {
-      "orderPizzasId": 36,
+      "orderPizzaId": 36,
       "toppingId": 5,
       "id": 113
     },
     {
-      "orderPizzasId": 36,
+      "orderPizzaId": 36,
       "toppingId": 3,
       "id": 114
     },
     {
-      "orderPizzasId": 36,
+      "orderPizzaId": 36,
       "toppingId": 3,
       "id": 115
+    },
+    {
+      "orderPizzaId": 37,
+      "toppingId": 2,
+      "id": 116
+    },
+    {
+      "orderPizzaId": 37,
+      "toppingId": 3,
+      "id": 117
+    },
+    {
+      "orderPizzaId": 38,
+      "toppingId": 2,
+      "id": 118
+    },
+    {
+      "orderPizzaId": 38,
+      "toppingId": 1,
+      "id": 119
+    },
+    {
+      "orderPizzaId": 38,
+      "toppingId": 8,
+      "id": 120
+    },
+    {
+      "orderPizzaId": 38,
+      "toppingId": 7,
+      "id": 121
+    },
+    {
+      "orderPizzaId": 39,
+      "toppingId": 2,
+      "id": 122
+    },
+    {
+      "orderPizzaId": 39,
+      "toppingId": 6,
+      "id": 123
+    },
+    {
+      "orderPizzaId": 40,
+      "toppingId": 1,
+      "id": 124
+    },
+    {
+      "orderPizzaId": 40,
+      "toppingId": 2,
+      "id": 125
+    },
+    {
+      "orderPizzaId": 40,
+      "toppingId": 3,
+      "id": 126
+    },
+    {
+      "orderPizzaId": 40,
+      "toppingId": 1,
+      "id": 127
+    },
+    {
+      "orderPizzaId": 40,
+      "toppingId": 2,
+      "id": 128
+    },
+    {
+      "orderPizzaId": 39,
+      "toppingId": 6,
+      "id": 129
+    },
+    {
+      "orderPizzaId": 38,
+      "toppingId": 7,
+      "id": 130
+    },
+    {
+      "orderPizzaId": 39,
+      "toppingId": 8,
+      "id": 131
+    },
+    {
+      "orderPizzaId": 40,
+      "toppingId": 1,
+      "id": 132
+    },
+    {
+      "orderPizzaId": 35,
+      "toppingId": 2,
+      "id": 133
+    },
+    {
+      "orderPizzaId": 36,
+      "toppingId": 7,
+      "id": 134
+    },
+    {
+      "orderPizzaId": 40,
+      "toppingId": 1,
+      "id": 135
     }
   ]
 }
