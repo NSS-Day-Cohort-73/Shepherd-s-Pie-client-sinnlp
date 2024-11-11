@@ -4,6 +4,7 @@ import "../../styles/addPizza.css";
 import {
   AddPizzaChoices,
   AddPizzaToppings,
+  GetOrderById,
   GetToppings,
 } from "../../services/orderServices";
 
@@ -13,6 +14,7 @@ export const AddPizza = () => {
   const [getToppings, setToppings] = useState("");
   const [getSauce, setSauce] = useState("");
   const [allToppings, setAllToppings] = useState([]);
+  const [currentOrder, setCurrentOrder] = useState({});
 
   const { orderId } = useParams();
 
@@ -50,8 +52,9 @@ export const AddPizza = () => {
     await Promise.all(
       pizzaToppings.map((toppingObj) => AddPizzaToppings(toppingObj))
     );
+    GetOrderById(orderId).then(setCurrentOrder);
+
     navigate(`/orders/${orderId}`);
-    //alert("New pizza added:", pizza);
   };
 
   return (

@@ -47,7 +47,7 @@ export const OrderDetails = ({ currentUser }) => {
     return basePrice + toppingCost + deliveryCost;
   };
 
-  /*useEffect(() => {
+  useEffect(() => {
     const addUpCost = async () => {
       let totalCost = 0;
       for (const order of currentOrder) {
@@ -60,19 +60,9 @@ export const OrderDetails = ({ currentUser }) => {
         totalCost += basePrice + toppingCost + deliveryCost;
       }
       setTotalOrderCost(totalCost);
-      const updatedOrder = {
-        isDelivery: orderToEdit.isDelivery,
-        dateTime: orderToEdit.dateTime,
-        tableNumber: orderToEdit.tableNumber,
-        tip: orderToEdit.tip,
-        delivererId: orderToEdit.delivererId,
-        employeeId: orderToEdit.employeeId,
-        cost: totalCost
-      };
-      await AddOrderTotalPrice(orderId, updatedOrder);
     };
     addUpCost();
-  }, [currentOrder, orderToEdit, toppings, orderId]);*/
+  }, [currentOrder, orderToEdit, toppings, orderId]);
 
   const handleDriver = () => {
     if (
