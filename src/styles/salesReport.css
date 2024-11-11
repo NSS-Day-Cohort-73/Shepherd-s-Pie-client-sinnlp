@@ -17,7 +17,6 @@
 
 .popular-option,
 .monthly-orders {
-  border: 1px solid brown;
   padding: 1rem;
   width: 30%;
   border-radius: 0.3rem;
@@ -60,8 +59,10 @@
   align-items: flex-end;
   font-size: 1.5rem;
   cursor: pointer;
+  border: 1px solid brown;
+  margin: 0 0 2rem 0;
 }
 
-.monthly-orders:hover {
+.orders-crd:hover {
   box-shadow: 0 0 0.3rem gray;
 }

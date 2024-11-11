@@ -280,7 +280,7 @@
       "tip": true,
       "delivererId": null,
       "employeeId": 7,
-      "cost": null,
+      "cost": 18.5,
       "id": 13
     },
     {
@@ -340,7 +340,7 @@
       "tip": true,
       "delivererId": null,
       "employeeId": 7,
-      "cost": null,
+      "cost": 16.5,
       "id": 19
     },
     {
@@ -350,8 +350,28 @@
       "tip": true,
       "delivererId": null,
       "employeeId": 7,
-      "cost": null,
+      "cost": 29.5,
       "id": 20
+    },
+    {
+      "isDelivery": true,
+      "dateTime": "2024-11-11T15:56:39.410Z",
+      "tableNumber": null,
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": 16,
+      "id": 21
+    },
+    {
+      "isDelivery": false,
+      "dateTime": "2024-11-11T15:59:19.735Z",
+      "tableNumber": "9",
+      "tip": true,
+      "delivererId": null,
+      "employeeId": 7,
+      "cost": 30.5,
+      "id": 22
     }
   ],
   "orderPizzas": [
@@ -564,6 +584,27 @@
       "sauceOptionId": 3,
       "pizzaSizeId": 3,
       "id": 33
+    },
+    {
+      "orderId": 21,
+      "cheeseOptionId": 2,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 1,
+      "id": 34
+    },
+    {
+      "orderId": 22,
+      "cheeseOptionId": 1,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 3,
+      "id": 35
+    },
+    {
+      "orderId": 22,
+      "cheeseOptionId": 1,
+      "sauceOptionId": 1,
+      "pizzaSizeId": 2,
+      "id": 36
     }
   ],
   "orderToppings": [
@@ -1088,6 +1129,51 @@
       "orderPizzasId": 33,
       "toppingId": 7,
       "id": 106
+    },
+    {
+      "orderPizzasId": 34,
+      "toppingId": 1,
+      "id": 107
+    },
+    {
+      "orderPizzasId": 34,
+      "toppingId": 2,
+      "id": 108
+    },
+    {
+      "orderPizzasId": 35,
+      "toppingId": 1,
+      "id": 109
+    },
+    {
+      "orderPizzasId": 35,
+      "toppingId": 6,
+      "id": 110
+    },
+    {
+      "orderPizzasId": 35,
+      "toppingId": 2,
+      "id": 111
+    },
+    {
+      "orderPizzasId": 36,
+      "toppingId": 4,
+      "id": 112
+    },
+    {
+      "orderPizzasId": 36,
+      "toppingId": 5,
+      "id": 113
+    },
+    {
+      "orderPizzasId": 36,
+      "toppingId": 3,
+      "id": 114
+    },
+    {
+      "orderPizzasId": 36,
+      "toppingId": 3,
+      "id": 115
     }
   ]
 }

@@ -7,6 +7,7 @@ import {
   DeletePizza,
   GetOrderById,
   GetToppingsByPizzaId,
+  GrabOrders,
 } from "../../services/orderServices";
 import { GetEmployees } from "../../services/employeeServices";
 
@@ -16,6 +17,7 @@ export const OrderDetails = ({ currentUser }) => {
   const [employees, setEmployees] = useState([]);
   const [orderToEdit, setOrderToEdit] = useState({});
   const [totalOrderCost, setTotalOrderCost] = useState(null);
+  const [allTheOrders, setAllTheOrders] = useState([]);
 
   const { orderId } = useParams();
   const navigate = useNavigate();
@@ -105,6 +107,22 @@ export const OrderDetails = ({ currentUser }) => {
   const handleAddDeliverer = () => {
     AddDeliverer(orderId, orderToEdit);
   };
+
+  const handleConfirmOrder = () => {
+    const pizzaObj = {
+      isDelivery: orderToEdit.isDelivery,
+      dateTime: orderToEdit.dateTime,
+      tableNumber: orderToEdit.tableNumber,
+      tip: orderToEdit.tip,
+      delivererId: orderToEdit.delivererId,
+      employeeId: orderToEdit.employeeId,
+      cost: totalOrderCost,
+    };
+    AddOrderTotalPrice(orderId, pizzaObj)
+      .then(GrabOrders())
+      .then(setAllTheOrders)
+      .then(navigate("/all-orders"));
+  };
   return (
     <div className="container">
       <section className="details-container">
@@ -167,6 +185,9 @@ export const OrderDetails = ({ currentUser }) => {
           {/* <Link to={"/add-pizza"}>
             <button className="btn btn-primary">Add Pizza</button>
           </Link> */}
+          <button className="btn btn-secondary" onClick={handleConfirmOrder}>
+            Confirm Order
+          </button>
           <button
             className="btn btn-secondary"
             onClick={() => {

@@ -109,7 +109,7 @@ export const SalesReport = () => {
             navigate(`/orders/${order.order.id}`);
           }}
         >
-          <div>
+          <div className="one-order">
             <p>Order# {order.order.id}</p>
             <p>Employee# {order.order.employeeId}</p>
           </div>
