@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import {
   AddDeliverer,
+  AddOrderTotalPrice,
   CancelOrder,
   DeletePizza,
   GetOrderById,
   GetToppingsByPizzaId,
+  GrabOrders,
 } from "../../services/orderServices";
 import { GetEmployees } from "../../services/employeeServices";
 
@@ -14,21 +16,32 @@ export const OrderDetails = ({ currentUser }) => {
   const [toppings, setToppings] = useState([]);
   const [employees, setEmployees] = useState([]);
   const [orderToEdit, setOrderToEdit] = useState({});
+  const [totalOrderCost, setTotalOrderCost] = useState(null);
+  const [allTheOrders, setAllTheOrders] = useState([]);
 
   const { orderId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    GetOrderById(orderId).then((o) => {
-      setCurrentOrder(o);
-      setOrderToEdit(o[0].order);
-    });
-    GetToppingsByPizzaId(currentOrder.id).then(setToppings);
-    GetEmployees().then(setEmployees);
+    const fetchData = async () => {
+      const orderData = await GetOrderById(orderId);
+      setCurrentOrder(orderData);
+      setOrderToEdit(orderData[0]?.order || {});
+
+      if (orderData[0]?.id) {
+        const toppingsData = await GetToppingsByPizzaId(orderData[0].id);
+        setToppings(toppingsData);
+      }
+
+      const employeesData = await GetEmployees();
+      setEmployees(employeesData);
+    };
+
+    fetchData();
   }, [orderId]);
 
   const handlePizzaCost = (order) => {
-    const basePrice = order.pizzaSize.price;
+    const basePrice = order.pizzaSize?.price;
     const toppingCost =
       toppings.filter((topping) => topping.orderPizzasId === order.id).length *
       0.5;
@@ -36,19 +49,22 @@ export const OrderDetails = ({ currentUser }) => {
     return basePrice + toppingCost + deliveryCost;
   };
 
-  const handleTotalCost = () => {
-    let totalCost = 0;
-    currentOrder.forEach((order) => {
-      const basePrice = order.pizzaSize.price;
-      const toppingCost =
-        toppings.filter((topping) => topping.orderPizzasId === order.id)
-          .length * 0.5;
-      const deliveryCost = order.order.isDelivery ? 5 : 0;
+  useEffect(() => {
+    const addUpCost = async () => {
+      let totalCost = 0;
+      for (const order of currentOrder) {
+        const basePrice = order.pizzaSize.price;
+        const toppingCost =
+          toppings.filter((topping) => topping.orderPizzasId === order.id)
+            .length * 0.5;
+        const deliveryCost = order.order.isDelivery ? 5 : 0;
 
-      totalCost += basePrice + toppingCost + deliveryCost;
-    });
-    return totalCost;
-  };
+        totalCost += basePrice + toppingCost + deliveryCost;
+      }
+      setTotalOrderCost(totalCost);
+    };
+    addUpCost();
+  }, [currentOrder, orderToEdit, toppings, orderId]);
 
   const handleDriver = () => {
     if (
@@ -91,24 +107,40 @@ export const OrderDetails = ({ currentUser }) => {
   const handleAddDeliverer = () => {
     AddDeliverer(orderId, orderToEdit);
   };
+
+  const handleConfirmOrder = () => {
+    const pizzaObj = {
+      isDelivery: orderToEdit.isDelivery,
+      dateTime: orderToEdit.dateTime,
+      tableNumber: orderToEdit.tableNumber,
+      tip: orderToEdit.tip,
+      delivererId: orderToEdit.delivererId,
+      employeeId: orderToEdit.employeeId,
+      cost: totalOrderCost,
+    };
+    AddOrderTotalPrice(orderId, pizzaObj)
+      .then(GrabOrders())
+      .then(setAllTheOrders)
+      .then(navigate("/all-orders"));
+  };
   return (
     <div className="container">
       <section className="details-container">
-        <h3 className="order-number">Order# {orderToEdit.id}</h3>
+        <h3 className="order-number">Order# {orderToEdit?.id}</h3>
         {currentOrder.map((order, i) => {
           return (
             <div key={i} className="pizza-choices">
               <div className="pizza-choice">
                 <span className="bold">Size: </span>
-                {order.pizzaSize.size}
+                {order.pizzaSize?.size}
               </div>
               <div className="pizza-choice">
                 <span className="bold">Cheese: </span>
-                {order.cheeseOption.type}
+                {order.cheeseOption?.type}
               </div>
               <div className="pizza-choice">
                 <span className="bold">Sauce: </span>
-                {order.sauceOption.type}
+                {order.sauceOption?.type}
               </div>
               <span className="bold">Toppings: </span>
               <ul className="pizza-choice">
@@ -142,17 +174,20 @@ export const OrderDetails = ({ currentUser }) => {
         })}
       </section>
       <section className="utilities-container">
-        <h3>Total Order Cost: ${handleTotalCost().toFixed(2)}</h3>
+        <h3>Total Order Cost: ${totalOrderCost?.toFixed(2)}</h3>
         <div className="order-utilities">
           <button
             className="btn btn-primary"
-            onClick={() => navigate("/add-pizza")}
+            onClick={() => navigate(`/orders/${orderId}/add-pizza`)}
           >
             Add Pizza
           </button>
           {/* <Link to={"/add-pizza"}>
             <button className="btn btn-primary">Add Pizza</button>
           </Link> */}
+          <button className="btn btn-secondary" onClick={handleConfirmOrder}>
+            Confirm Order
+          </button>
           <button
             className="btn btn-secondary"
             onClick={() => {
