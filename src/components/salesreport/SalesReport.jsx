@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { GetOrders } from "../../services/orderServices.js";
+import {
+  GetOrders,
+  GetPizzaAndToppings,
+  GrabOrders,
+} from "../../services/orderServices.js";
 import "../../styles/salesReport.css";
 import { useNavigate } from "react-router-dom";
 
@@ -9,12 +13,41 @@ export const SalesReport = () => {
   const [mostPopularCheese, setMostPopularCheese] = useState("");
   const [mostPopularSauce, setMostPopularSauce] = useState("");
   const [mostPopularSize, setMostPopularSize] = useState("");
+  const [allTheOrders, setAllTheOrders] = useState([]);
+  const [mostPopularToppings, setMostPopularToppings] = useState([]);
+  const [pizzaAndToppings, setPizzaAndToppings] = useState([]);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     GetOrders().then(setAllOrders);
+    GrabOrders().then(setAllTheOrders);
+    GetPizzaAndToppings();
+    //GetPizzaAndToppings().then(setPizzaAndToppings);
   }, []);
+
+  const GetPizzaAndToppings = () => {
+    fetch("http://localhost:8088/orders")
+      .then((response) => response.json())
+      .then((orders) => {
+        const orderIds = orders.map((order) => order.id);
+        return Promise.all(
+          orderIds.map((orderId) =>
+            fetch(`http://localhost:8088/orderPizzas?orderId=${orderId}`)
+              .then((response) => response.json())
+              .then((orderPizzas) => {
+                return fetch(
+                  `http://localhost:8088/orderToppings?orderPizzasId=${orderPizzas.id}`
+                )
+                  .then((response) => response.json())
+                  .then((orderToppings) => ({ orderPizzas, orderToppings }));
+              })
+          )
+        );
+      })
+      .then((data) => setPizzaAndToppings(data))
+      .catch((error) => console.error("Error:", error));
+  };
 
   const handleMonthChange = (e) => {
     const currentMonth = e.target.value;
@@ -96,24 +129,56 @@ export const SalesReport = () => {
     setMostPopularSize(popularSize());
   }, [allOrders, selectedMonth]);
 
+  /*useEffect(() => {
+    const getTopToppings = (allOrders, selectedMonth) => {
+      const toppingCount = {};
+
+      allOrders
+        .filter((order) =>
+          order.order.dateTime.startsWith(`2024-${selectedMonth}`)
+        )
+        .forEach((order) => {
+          order.toppings.forEach((topping) => {
+            toppingCount[topping.id] = (toppingCount[topping.id] || 0) + 1;      This dosent work
+          });
+        });
+      if (Object.keys(toppingCount).length === 0) {
+        return "No data available";
+      }
+
+      const sortedToppings = Object.entries(pizzaAndToppings)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3)
+        .map((entry) => {
+          const topping = pizzaAndToppings
+            .find((o) => o.topping.some((t) => t.id === entry[0]))
+            .topping.find((t) => t.id === entry[0]);
+          return topping.name;
+        });
+      return sortedToppings;
+    };
+    const topToppings = getTopToppings(allOrders, selectedMonth);
+    setMostPopularToppings(topToppings);
+  }, []); */
+
   const handleFilteredOrders = () => {
-    const filteredOrders = allOrders.filter((order) =>
-      order.order.dateTime.startsWith(`2024-${selectedMonth}`)
+    const filteredOrders = allTheOrders.filter((order) =>
+      order.dateTime.startsWith(`2024-${selectedMonth}`)
     );
     if (filteredOrders.length > 0) {
       return filteredOrders.map((order) => (
         <section
-          key={order.order.id}
+          key={order.id}
           className="orders-crd"
           onClick={() => {
-            navigate(`/orders/${order.order.id}`);
+            navigate(`/orders/${order.id}`);
           }}
         >
           <div className="one-order">
-            <p>Order# {order.order.id}</p>
-            <p>Employee# {order.order.employeeId}</p>
+            <p>Order# {order.id}</p>
+            <p>Employee# {order.employeeId}</p>
           </div>
-          <p>Total Cost: ${order.order.cost}</p>
+          <p>Total Cost: ${order.cost}</p>
         </section>
       ));
     } else {
