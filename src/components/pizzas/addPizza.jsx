@@ -1,12 +1,28 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../../styles/addPizza.css";
+import {
+  AddPizzaChoices,
+  AddPizzaToppings,
+  GetOrderById,
+  GetToppings,
+} from "../../services/orderServices";
 
 export const AddPizza = () => {
   const [getSize, setSize] = useState("");
   const [getCheese, setCheese] = useState("");
   const [getToppings, setToppings] = useState("");
   const [getSauce, setSauce] = useState("");
+  const [allToppings, setAllToppings] = useState([]);
+  const [currentOrder, setCurrentOrder] = useState({});
+
+  const { orderId } = useParams();
+
+  const navigate = useNavigate();
+
+  useState(() => {
+    GetToppings().then(setAllToppings);
+  }, []);
 
   const handleToppingChange = (event) => {
     const { value, checked } = event.target;
@@ -17,11 +33,28 @@ export const AddPizza = () => {
     }
   };
 
-  const handleAddPizza = (event) => {
+  const handleAddPizza = async (event) => {
     event.preventDefault();
-    const pizza = { getSize, getCheese, getToppings, getSauce };
-    alert("New pizza added:", pizza);
-    // code to update the order state
+    const pizzaOptions = {
+      orderId: parseInt(orderId),
+      cheeseOptionId: parseInt(getCheese),
+      sauceOptionId: parseInt(getSauce),
+      pizzaSizeId: parseInt(getSize),
+    };
+    const response = await AddPizzaChoices(orderId, pizzaOptions);
+    const newPizza = await response.json();
+
+    const pizzaToppings = getToppings.map((topping) => ({
+      orderPizzasId: newPizza.id,
+      toppingId: parseInt(topping),
+    }));
+
+    await Promise.all(
+      pizzaToppings.map((toppingObj) => AddPizzaToppings(toppingObj))
+    );
+    GetOrderById(orderId).then(setCurrentOrder);
+
+    navigate(`/orders/${orderId}`);
   };
 
   return (
@@ -35,8 +68,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="size"
-                value="Small"
-                onChange={() => setSize("Small")}
+                value="1"
+                onChange={(e) => setSize(e.target.value)}
               />{" "}
               Small
             </label>
@@ -44,8 +77,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="size"
-                value="Medium"
-                onChange={() => setSize("Medium")}
+                value="2"
+                onChange={(e) => setSize(e.target.value)}
               />{" "}
               Medium
             </label>
@@ -53,8 +86,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="size"
-                value="Large"
-                onChange={() => setSize("Large")}
+                value="3"
+                onChange={(e) => setSize(e.target.value)}
               />{" "}
               Large
             </label>
@@ -68,8 +101,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="cheese"
-                value="Buffalo Mozzarella"
-                onChange={() => setCheese("Buffalo Mozzarella")}
+                value="1"
+                onChange={(e) => setCheese(e.target.value)}
               />{" "}
               Buffalo Mozzarella
             </label>
@@ -77,8 +110,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="cheese"
-                value="Four Cheese"
-                onChange={() => setCheese("Four Cheese")}
+                value="2"
+                onChange={(e) => setCheese(e.target.value)}
               />{" "}
               Four Cheese
             </label>
@@ -86,8 +119,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="cheese"
-                value="Vegan"
-                onChange={() => setCheese("Vegan")}
+                value="3"
+                onChange={(e) => setCheese(e.target.value)}
               />{" "}
               Vegan
             </label>
@@ -95,8 +128,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="cheese"
-                value="None"
-                onChange={() => setCheese("None")}
+                value="4"
+                onChange={(e) => setCheese(e.target.value)}
               />{" "}
               None
             </label>
@@ -110,8 +143,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="sauce"
-                value="Marinara"
-                onChange={() => setSauce("Marinara")}
+                value="1"
+                onChange={(e) => setSauce(e.target.value)}
               />{" "}
               Marinara
             </label>
@@ -119,8 +152,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="sauce"
-                value="Arrabbiata"
-                onChange={() => setSauce("Arrabbiata")}
+                value="2"
+                onChange={(e) => setSauce(e.target.value)}
               />{" "}
               Arrabbiata
             </label>
@@ -128,8 +161,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="sauce"
-                value="Garlic White"
-                onChange={() => setSauce("Garlic White")}
+                value="3"
+                onChange={(e) => setSauce(e.target.value)}
               />{" "}
               Garlic White
             </label>
@@ -137,8 +170,8 @@ export const AddPizza = () => {
               <input
                 type="radio"
                 name="sauce"
-                value="None"
-                onChange={() => setSauce("None")}
+                value="4"
+                onChange={(e) => setSauce(e.target.value)}
               />{" "}
               None
             </label>
@@ -148,29 +181,24 @@ export const AddPizza = () => {
         <div className="pizza-option">
           <label>Toppings?</label>
           <div>
-            {[
-              "Extra Cheese",
-              "Black Olive",
-              "Green Pepper",
-              "Sausage",
-              "Pepperoni",
-              "Mushroom",
-              "Onion",
-              "Basil",
-            ].map((topping) => (
-              <label key={topping}>
+            {allToppings.map((topping) => (
+              <label key={topping.id}>
                 <input
                   type="checkbox"
-                  value={topping}
+                  value={topping.id}
                   onChange={handleToppingChange}
                 />{" "}
-                {topping}
+                {topping.type}
               </label>
             ))}
           </div>
         </div>
 
-        <button type="submit" className="add-pizza-button">
+        <button
+          type="submit"
+          className="add-pizza-button"
+          onClick={handleAddPizza}
+        >
           Add New Pizza
         </button>
       </form>
