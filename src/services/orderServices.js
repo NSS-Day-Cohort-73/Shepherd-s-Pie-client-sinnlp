@@ -99,3 +99,13 @@ export const CreateOrderPizza = (pizzaObj) => {
     body: JSON.stringify(pizzaObj),
   });
 };
+
+export const updateOrder = (orderId, updatedPizza) => {
+  return fetch(`http://localhost:8088/orderPizzas/${orderId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedPizza),
+  }).then((res) => res.json())
+}

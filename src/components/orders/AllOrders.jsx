@@ -1,41 +1,40 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../../styles/AllOrders.css";
+import React, { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { GrabOrders } from "../../services/orderServices" 
+import "../../styles/AllOrders.css"
 
 export const AllOrders = () => {
-  const [orders, setOrders] = useState([]);
-  const [filteredOrders, setFilteredOrders] = useState([]);
+  const [orders, setOrders] = useState([])
+  const [filteredOrders, setFilteredOrders] = useState([])
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = new Date().toISOString().slice(0, 10)
+  const [selectedDate, setSelectedDate] = useState(today)
 
-  const [selectedDate, setSelectedDate] = useState(today);
-
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const response = await fetch("http://localhost:8088/orders");
-      const data = await response.json();
-      setOrders(data);
-    };
-    fetchOrders();
-  }, []);
+      const data = await GrabOrders() 
+      setOrders(data)
+    }
+    fetchOrders()
+  }, [])
 
   useEffect(() => {
     if (selectedDate) {
       const filtered = orders.filter((order) => {
-        const orderDate = new Date(order.dateTime).toISOString().slice(0, 10);
-        return orderDate === selectedDate;
-      });
-      setFilteredOrders(filtered);
+        const orderDate = new Date(order.dateTime).toISOString().slice(0, 10)
+        return orderDate === selectedDate
+      })
+      setFilteredOrders(filtered)
     } else {
-      setFilteredOrders(orders);
+      setFilteredOrders(orders)
     }
-  }, [selectedDate, orders]);
+  }, [selectedDate, orders])
 
   const orderDetailsArrow = (orderId) => {
-    navigate(`/orders/${orderId}`);
-  };
+    navigate(`/orders/${orderId}`)
+  }
 
   return (
     <div className="all-orders-container">
@@ -72,5 +71,5 @@ export const AllOrders = () => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
